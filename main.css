@@ -1,0 +1,11 @@
+#cc-charts_widget .cc-charts_widget_top_section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#cc-charts_widget .cc-charts_widget_graph_section {
+    height: 150px;
+    width: 100%;
+    margin: 25px auto;
+}
