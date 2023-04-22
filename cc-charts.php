@@ -101,10 +101,10 @@ class CC_Charts {
 			$this->slug . '/v1',
 			'/data/(?P<days>\d+)',
 			array(
-				'methods'  => WP_REST_Server::READABLE,
-				'callback' => array( $this, 'rest_api_callback' ),
+				'methods'             => WP_REST_Server::READABLE,
+				'callback'            => array( $this, 'rest_api_callback' ),
 				'permission_callback' => array( $this, 'rest_api_permission_callback' ),
-				'args'     => array(
+				'args'                => array(
 					'days' => array(
 						'validate_callback' => fn( $param ) => is_numeric( $param ),
 					),
@@ -183,12 +183,12 @@ class CC_Charts {
 
 	/**
 	 * Enqueue admin scripts
-	 * 
+	 *
 	 * @param string $hook_suffix
 	 */
 	public function scripts( $hook_suffix ) {
 		// Only enqueue on dashboard page
-		if ( $hook_suffix !== 'index.php' && get_current_screen()?->id !== 'dashboard' ) {
+		if ( 'index.php' !== $hook_suffix && 'dashboard' !== get_current_screen()?->id ) {
 			return;
 		}
 
